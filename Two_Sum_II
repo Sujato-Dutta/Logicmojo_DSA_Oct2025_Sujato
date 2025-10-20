@@ -1,0 +1,19 @@
+class Solution(object):
+    def twoSum(self, numbers, target):
+        """
+        :type numbers: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        length=len(numbers)
+        left,right=0,length-1
+        while(left<right):
+            num_sum = numbers[left]+numbers[right]
+            if num_sum==target:
+                return [left+1,right+1]
+            elif num_sum<target:
+                left= left+1
+            else:
+                right=right-1
+        return -1
+
